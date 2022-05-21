@@ -50,6 +50,7 @@ function displayResponses(){
     let containerEl = document.querySelector(".response-container");
     containerEl.remove();
 
+    //create new responses
     containerEl=document.createElement("section");
     containerEl.className ="response-container";
     console.log(responses);
