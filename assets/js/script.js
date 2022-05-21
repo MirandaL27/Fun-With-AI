@@ -1,4 +1,4 @@
-
+var myKey = config.API_KEY;
 var bodyEl = document.querySelector("body");
 var formEl = document.querySelector(".promptForm");
 var promptEl = document.querySelector(".prompt");
@@ -24,7 +24,7 @@ function fetchData(promptText) {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${process.env.API_KEY}`,
+            Authorization: `Bearer ${myKey}`,
         },
         body: JSON.stringify(data),
     })
@@ -32,7 +32,7 @@ function fetchData(promptText) {
             if (response.ok) {
                 response.json().then(function (data) {
                     //call to display data here!
-                    console.log(data);
+                    console.log(data.choices[0].text);
                 });
             } else {
                 alert('Error: ' + response.statusText);
@@ -42,3 +42,5 @@ function fetchData(promptText) {
             alert('Unable to connect to Open OpenAI');
         });
 }
+
+function 
