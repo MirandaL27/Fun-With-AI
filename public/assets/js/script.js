@@ -1,4 +1,3 @@
-var myKey = config.API_KEY;
 var responses = [];
 var bodyEl = document.querySelector("body");
 var formEl = document.querySelector(".promptForm");
@@ -11,38 +10,25 @@ bodyEl.addEventListener("submit", function (event) {
     fetchData(promptText);
 });
 
-function fetchData(promptText) {
-    const data = {
-        prompt: promptText,
-        temperature: 0.5,
-        max_tokens: 64,
-        top_p: 1.0,
-        frequency_penalty: 0.0,
-        presence_penalty: 0.0,
-    };
-
-    fetch("https://api.openai.com/v1/engines/text-curie-001/completions", {
-        method: "POST",
+async function fetchData(promptText) {
+    const response = await fetch(`/openAPI`, {
+        method: 'POST',
+        body: JSON.stringify({
+          promptText
+        }),
         headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${myKey}`,
-        },
-        body: JSON.stringify(data),
-    })
-        .then(function (response) {
-            if (response.ok) {
-                response.json().then(function (data) {
-                    //call to display data here!
-                    responses.push({prompt: promptText, response: data.choices[0].text});
-                    displayResponses();
-                });
-            } else {
-                alert('Error: ' + response.statusText);
-            }
-        })
-        .catch(function (error) {
-            alert('Unable to connect to Open OpenAI');
-        });
+          'Content-Type': 'application/json'
+        }
+      });
+      const respdata = await response.json();
+    console.log(respdata);
+      if (!respdata.error) {
+          //call to display data here!
+            responses.push({prompt: respdata.prompt, response: respdata.response});
+            displayResponses();
+      } else {
+        alert(respdata.error);
+      }
 }
 
 function displayResponses(){
