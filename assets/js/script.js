@@ -1,4 +1,5 @@
 var myKey = config.API_KEY;
+var responses = [];
 var bodyEl = document.querySelector("body");
 var formEl = document.querySelector(".promptForm");
 var promptEl = document.querySelector(".prompt");
@@ -32,7 +33,8 @@ function fetchData(promptText) {
             if (response.ok) {
                 response.json().then(function (data) {
                     //call to display data here!
-                    console.log(data.choices[0].text);
+                    responses.push({prompt: promptText, response: data.choices[0].text});
+                    displayResponses();
                 });
             } else {
                 alert('Error: ' + response.statusText);
@@ -43,4 +45,37 @@ function fetchData(promptText) {
         });
 }
 
-function 
+function displayResponses(){
+    //removes old reponses
+    let containerEl = document.querySelector(".response-container");
+    containerEl.remove();
+
+    containerEl=document.createElement("section");
+    containerEl.className ="response-container";
+    console.log(responses);
+    for(let i=responses.length-1;i>=0;i--){
+        let divEl = document.createElement("div");
+
+        let promptDiv = document.createElement("div");
+        let promptLableEl = document.createElement("h3");
+        promptLableEl.textContent = "Prompt: ";
+        let promptTextEl = document.createElement("p");
+        promptTextEl.textContent = responses[i].prompt;
+        promptDiv.appendChild(promptLableEl);
+        promptDiv.appendChild(promptTextEl);
+
+        let responseDiv = document.createElement("div");
+        let responseLabelEl = document.createElement("h3");
+        responseLabelEl.textContent = "Response: ";
+        let responseTextEl = document.createElement("p");
+        responseTextEl.textContent = responses[i].response;
+        responseDiv.appendChild(responseLabelEl);
+        responseDiv.appendChild(responseTextEl);
+
+        divEl.appendChild(promptDiv);
+        divEl.appendChild(responseDiv);
+        containerEl.appendChild(divEl);
+    }
+
+    bodyEl.appendChild(containerEl);
+}
