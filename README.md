@@ -21,8 +21,8 @@ note: this application uses an api key that is not available in the source code.
 * OpenAI
 
 ## Screenshots/Links
-Deployed Application:
-![alt text](public/assets/images/portfolio_screenshot.png)
+* Deployed Application:
+* ![alt text](public/assets/images/intern-challenge-screenshot.png)
 
 # Credits
 Developed by: Miranda Lane
