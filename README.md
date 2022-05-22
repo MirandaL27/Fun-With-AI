@@ -22,7 +22,7 @@ note: this application uses an api key that is not available in the source code.
 * OpenAI
 
 ## Screenshots/Links
-* Deployed Application:
+* Deployed Application: https://fun-with-ai-ml.herokuapp.com/
 * ![alt text](public/assets/images/intern-challenge-screenshot.png)
 
 # Credits
