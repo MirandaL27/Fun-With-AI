@@ -47,8 +47,8 @@ async function getData(promptText) {
     if (resp.status === 200) {
         return { prompt: promptText, response: respdata.choices[0].text };
     } else {
-        let temp = 'Error: ' + response.statusText;
-        console.log('Error: ' + response.statusText);
+        let temp = 'Error: ' + resp.statusText;
+        console.log('Error: ' + resp.statusText);
         return {error: temp};
     }
 }
