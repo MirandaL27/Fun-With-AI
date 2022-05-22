@@ -25,5 +25,5 @@ note: this application uses an api key that is not available in the source code.
 * ![alt text](public/assets/images/intern-challenge-screenshot.png)
 
 # Credits
-Developed by: Miranda Lane
-Photo Attribution: Photo by Markus Spiske from Pexels
+* Developed by: Miranda Lane
+* Photo Attribution: Photo by Markus Spiske from Pexels
