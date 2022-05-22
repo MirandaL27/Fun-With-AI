@@ -2,7 +2,7 @@ var responses = [];
 var bodyEl = document.querySelector("body");
 var formEl = document.querySelector(".promptForm");
 var promptEl = document.querySelector(".prompt");
-
+var clearEl = document.querySelector(".clear-btn");
 
 bodyEl.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -89,5 +89,7 @@ function loadResponses(){
     }
     displayResponses();
 }
+
+clearEl.addEventListener("click", clearResponses);
 
 loadResponses();
