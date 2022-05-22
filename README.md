@@ -6,8 +6,8 @@ This application is uses an API called OpenAI to write responses to the user's p
 ## Usage
 Write a prompt in the text box and click submit.  Responses will appear at the bottom of the page, and are saved even if you reload.  To delete responses, hit the "clear responses" button. 
 
-local installion: npm i
-running the application: npm start
+* local installion: npm i
+* running the application: npm start
 
 note: this application uses an api key that is not available in the source code.  To run this application locally, it is recommended that you put your api key into a .env in the root folder of the application.
 
