@@ -4,21 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css">
     <title>Fun-With-AI</title>
 </head>
-<body>
-    <h1>Fun With AI</h1>
+<body class="code-background">
+    <header class="black-background p-large center-text">
+        <h1>Fun With AI</h1>
+    </header>
 
-    <form class="promptForm">
-        <label for="prompt">Enter Prompt</label>
-        <textarea id="prompt" type="text" class="prompt"></textarea>
-        <input type="submit" value="Submit">
-    </form>
+    <section class="black-background p-large m-large center-text">
+        <form class="promptForm">
+            <div class="p-small">
+                <div class="p-small">
+                    <label for="prompt">Enter Prompt</label>
+                </div>
+                <div>
+                    <textarea id="prompt" type="text" class="prompt font light-green-font dark-green-background rounded-corners p-small textBox transition light-green-border textBoxStyling"></textarea>
+                </div>
+            </div>
+            <input class="font light-green-font dark-green-background p-small rounded-corners clickable transition" type="submit" value="Submit">
+        </form>
+    </section>
 
-    <h2>Responses</h2>
-    <section class="response-container">
+    <h2 class="black-background p-large m-large">Responses</h2>
+    <section class="response-container black-background p-large m-large">
 
     </section>
+
 </body>
     <script src="/assets/js/script.js"></script>
 </html>
