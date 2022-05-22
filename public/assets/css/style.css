@@ -35,6 +35,10 @@
       padding: 10px;
   }
 
+  .p-small-bottom{
+      padding-bottom: 10px;
+  }
+
   .p-large{
       padding: 25px;
   }
